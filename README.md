@@ -18,14 +18,19 @@ A custom-built top-down character controller made from scratch in **Godot Engine
 
 ## 📸 Screenshots / Demo
 
-Attack Animation -
+- Attack Animation
+
 <img src="screenshots/AttackAnimation.gif" alt="Attack Animation" width="400"/>
 
-Look ANimation -
-![alt text](screenshots/LookAnimation.gif)
+<br>
+- Look Animation
 
-Run Animation -
-![alt text](screenshots/RunAnimation.gif)
+<img src="screenshots/LookAnimation.gif" alt="Attack Animation" width="400"/>
+
+<br>
+- Run Animation
+
+<img src="screenshots/RunAnimation.gif" alt="Attack Animation" width="400"/>
 
 ## 🛠️ Built With
 
