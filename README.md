@@ -22,10 +22,10 @@ Attack Animation -
 ![alt text](screenshots/AttackAnimation.gif)
 
 Look ANimation -
-![alt text](screenshots\LookAnimation.gif)
+![alt text](screenshots/LookAnimation.gif)
 
 Run Animation -
-![alt text](screenshots\RunAnimation.gif)
+![alt text](screenshots/RunAnimation.gif)
 
 ## 🛠️ Built With
 
