@@ -18,7 +18,8 @@ A custom-built top-down character controller made from scratch in **Godot Engine
 
 ## 📸 Screenshots / Demo
 
-> _Insert GIFs, images, or a link to a playable demo here_
+Attack Animation -
+https://github.com/ananthakrishnantm/TopDown3D_Godot/blob/main/screenshots/AttackAnimation.gif?raw=true
 
 ## 🛠️ Built With
 
