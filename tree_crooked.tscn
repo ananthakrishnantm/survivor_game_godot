@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bixbufkyp7krx"]
+
+[ext_resource type="PackedScene" uid="uid://djm6hak1rtscf" path="res://Env-assets/Tree/tree-crooked.glb" id="1_n61an"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jxqah"]
+height = 2.41699
+
+[node name="tree-crooked" instance=ExtResource("1_n61an")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-crooked" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-crooked/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20268, 0)
+shape = SubResource("CylinderShape3D_jxqah")

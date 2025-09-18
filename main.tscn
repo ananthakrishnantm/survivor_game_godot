@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6wq574m0de0k"]
+[gd_scene load_steps=16 format=3 uid="uid://b6wq574m0de0k"]
 
 [ext_resource type="PackedScene" uid="uid://cnclcuac33471" path="res://player.tscn" id="1_vjjoq"]
+[ext_resource type="PackedScene" uid="uid://8f8defquuv6b" path="res://rock_large.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bex41gsxcnsj6" path="res://log.tscn" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://kxsrbyqt360b" path="res://rock_small.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://csctd7alcmodm" path="res://rock_wide.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bixbufkyp7krx" path="res://tree_crooked.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cdw1kxssieam" path="res://tree_high.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cqbvrwiyxrqss" path="res://tree.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://b12mrjfsk8nqm" path="res://tree_high_round.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cu7ul66iy2cvm" path="res://log_large.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://c3rg04u7mji0x" path="res://log_stack_large.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://b5dr6iwdigrgf" path="res://cratemedium.tscn" id="12_dg77c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvsjw"]
-size = Vector3(100, 2, 100)
+size = Vector3(300, 2, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+albedo_color = Color(0.45098, 0.929412, 0.866667, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5dh48"]
-size = Vector3(100, 2, 100)
+material = SubResource("StandardMaterial3D_5vw27")
+size = Vector3(300, 2, 300)
 
 [node name="Main" type="Node"]
 
@@ -24,3 +39,42 @@ transform = Transform3D(1, 0, 0, 0, 0.397484, 0.917609, 0, -0.917609, 0.397484, 
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_vjjoq")]
+
+[node name="WorldManager" type="Node3D" parent="."]
+
+[node name="EnvironmentProps" type="Node3D" parent="WorldManager"]
+
+[node name="log2" parent="WorldManager/EnvironmentProps" instance=ExtResource("2_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51216, 0.05, -0.301228)
+
+[node name="rock-large" parent="WorldManager/EnvironmentProps" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98982, -9.53674e-07, -0.98182)
+
+[node name="rock-small" parent="WorldManager/EnvironmentProps" instance=ExtResource("3_h2yge")]
+transform = Transform3D(-0.287243, 0, -0.957858, 0, 1, 0, 0.957858, 0, -0.287243, -0.627331, 0.00468445, 4.7988)
+
+[node name="rock-wide" parent="WorldManager/EnvironmentProps" instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68399, 0, -5.30902)
+
+[node name="tree-crooked" parent="WorldManager/EnvironmentProps" instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56148, 2.25597e-17, -4.30873)
+
+[node name="tree-high" parent="WorldManager/EnvironmentProps" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13119, -9.53674e-07, 0.762354)
+
+[node name="tree" parent="WorldManager/EnvironmentProps" instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49837, 0, -4.49861)
+
+[node name="tree-high-round" parent="WorldManager/EnvironmentProps" instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69747, -0.0150604, 4.00974)
+
+[node name="log_large2" parent="WorldManager/EnvironmentProps" instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="log_stackLarge" parent="WorldManager/EnvironmentProps" instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154173, 0.0500001, -2.01528)
+
+[node name="crate-medium2" parent="WorldManager/EnvironmentProps" instance=ExtResource("12_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20174, 0.0200005, 1.64556)
+
+[node name="Enemies" type="Node3D" parent="WorldManager"]

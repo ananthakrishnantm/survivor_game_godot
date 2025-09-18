@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csctd7alcmodm"]
+
+[ext_resource type="PackedScene" uid="uid://dlbg1u3jgosqv" path="res://Env-assets/Rocks/rock-wide.glb" id="1_lmvdb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gb38"]
+size = Vector3(1.00818, 1.03418, 1.49154)
+
+[node name="rock-wide" instance=ExtResource("1_lmvdb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rock-wide" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock-wide/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221559, 0.517324, -0.0205643)
+shape = SubResource("BoxShape3D_3gb38")

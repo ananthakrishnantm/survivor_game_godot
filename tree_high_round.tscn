@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b12mrjfsk8nqm"]
+
+[ext_resource type="PackedScene" uid="uid://t6ujsppxf7jh" path="res://Env-assets/Tree/tree-high-round.glb" id="1_xytcn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t663i"]
+height = 2.76611
+
+[node name="tree-high-round" instance=ExtResource("1_xytcn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-high-round" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-high-round/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38173, 0)
+shape = SubResource("CylinderShape3D_t663i")
