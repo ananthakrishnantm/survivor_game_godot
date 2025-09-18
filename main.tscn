@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6wq574m0de0k"]
+[gd_scene load_steps=20 format=3 uid="uid://b6wq574m0de0k"]
 
 [ext_resource type="PackedScene" uid="uid://cnclcuac33471" path="res://player.tscn" id="1_vjjoq"]
 [ext_resource type="PackedScene" uid="uid://cmq1bnuyaposw" path="res://path_stone.tscn" id="1_ycdy4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bex41gsxcnsj6" path="res://log.tscn" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://dfygwhihk7ran" path="res://Env-assets/Path/path_stoneCircle.glb" id="2_w48qg"]
 [ext_resource type="PackedScene" uid="uid://kxsrbyqt360b" path="res://rock_small.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b6cqkm8tpurmw" path="res://house_1.tscn" id="3_vivmo"]
 [ext_resource type="PackedScene" uid="uid://csctd7alcmodm" path="res://rock_wide.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bixbufkyp7krx" path="res://tree_crooked.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cdw1kxssieam" path="res://tree_high.tscn" id="6_7mycd"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cu7ul66iy2cvm" path="res://log_large.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://c3rg04u7mji0x" path="res://log_stack_large.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b5dr6iwdigrgf" path="res://cratemedium.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dh0ym57x2sde1" path="res://lamp.tscn" id="16_2cqfq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvsjw"]
 size = Vector3(300, 2, 300)
@@ -36,12 +38,6 @@ shape = SubResource("BoxShape3D_hvsjw")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_5dh48")
 
-[node name="path_stone" parent="Ground" instance=ExtResource("1_ycdy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76052, 1.05, 1.64852)
-
-[node name="path_stoneCircle2" parent="Ground" instance=ExtResource("2_w48qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52609, 1.1, -0.00967407)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.397484, 0.917609, 0, -0.917609, 0.397484, -1.82456, 9.3648, -21.3615)
 shadow_enabled = true
@@ -51,6 +47,15 @@ shadow_enabled = true
 [node name="WorldManager" type="Node3D" parent="."]
 
 [node name="EnvironmentProps" type="Node3D" parent="WorldManager"]
+
+[node name="path_stoneCircle2" parent="WorldManager/EnvironmentProps" instance=ExtResource("2_w48qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52609, 0.1, -0.00967407)
+
+[node name="path_stone" parent="WorldManager/EnvironmentProps" instance=ExtResource("1_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76052, 0.05, 1.64852)
+
+[node name="House1" parent="WorldManager/EnvironmentProps" instance=ExtResource("3_vivmo")]
+transform = Transform3D(2.38085, 0, 0, 0, 2.38085, 0, 0, 0, 2.38085, -5.50121, 0, 14.7978)
 
 [node name="log2" parent="WorldManager/EnvironmentProps" instance=ExtResource("2_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51216, 0.05, -0.301228)
@@ -84,5 +89,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154173, 0.0500001, -2.01528
 
 [node name="crate-medium2" parent="WorldManager/EnvironmentProps" instance=ExtResource("12_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20174, 0.0200005, 1.64556)
+
+[node name="lamp" parent="WorldManager/EnvironmentProps" instance=ExtResource("16_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44333, 0, 2.80063)
 
 [node name="Enemies" type="Node3D" parent="WorldManager"]

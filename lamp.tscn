@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0ym57x2sde1"]
+
+[ext_resource type="PackedScene" uid="uid://b17odtd1wj6qf" path="res://Env-assets/Lamp/lamp.glb" id="1_bekw5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uno5e"]
+height = 1.54785
+radius = 0.116699
+
+[node name="lamp" instance=ExtResource("1_bekw5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lantern" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lantern/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.776987, 0)
+shape = SubResource("CylinderShape3D_uno5e")
