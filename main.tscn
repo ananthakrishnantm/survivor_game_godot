@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6wq574m0de0k"]
+[gd_scene load_steps=18 format=3 uid="uid://b6wq574m0de0k"]
 
 [ext_resource type="PackedScene" uid="uid://cnclcuac33471" path="res://player.tscn" id="1_vjjoq"]
+[ext_resource type="PackedScene" uid="uid://cmq1bnuyaposw" path="res://path_stone.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://8f8defquuv6b" path="res://rock_large.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bex41gsxcnsj6" path="res://log.tscn" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://dfygwhihk7ran" path="res://Env-assets/Path/path_stoneCircle.glb" id="2_w48qg"]
 [ext_resource type="PackedScene" uid="uid://kxsrbyqt360b" path="res://rock_small.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://csctd7alcmodm" path="res://rock_wide.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bixbufkyp7krx" path="res://tree_crooked.tscn" id="5_lquwl"]
@@ -33,6 +35,12 @@ shape = SubResource("BoxShape3D_hvsjw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_5dh48")
+
+[node name="path_stone" parent="Ground" instance=ExtResource("1_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76052, 1.05, 1.64852)
+
+[node name="path_stoneCircle2" parent="Ground" instance=ExtResource("2_w48qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52609, 1.1, -0.00967407)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.397484, 0.917609, 0, -0.917609, 0.397484, -1.82456, 9.3648, -21.3615)
@@ -66,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13119, -9.53674e-07, 0.762
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49837, 0, -4.49861)
 
 [node name="tree-high-round" parent="WorldManager/EnvironmentProps" instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69747, -0.0150604, 4.00974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26704, -0.0150604, 4.00974)
 
 [node name="log_large2" parent="WorldManager/EnvironmentProps" instance=ExtResource("10_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
